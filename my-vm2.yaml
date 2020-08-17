@@ -1,14 +1,28 @@
 apiVersion: ignite.weave.works/v1alpha2
 kind: VM
 metadata:
+  created: "2020-08-17T21:18:04Z"
   name: my-vm2
   uid: 599615df99804ae8
 spec:
-  image:
-    oci: weaveworks/ignite-ubuntu
   cpus: 1
   diskSize: 3GB
+  image:
+    oci: weaveworks/ignite-ubuntu:latest
+  kernel:
+    cmdLine: console=ttyS0 reboot=k panic=1 pci=off ip=dhcp
+    oci: weaveworks/ignite-kernel:4.19.125
   memory: 800MB
+  network: {}
+  sandbox:
+    oci: weaveworks/ignite:v0.7.1
   ssh: true
+  storage: {}
 status:
+  image:
+    id: oci://docker.io/weaveworks/ignite-ubuntu@sha256:fb64311bd7d6ba9d492defefac9357b2df059066b13f112f594bc2250a4279ed
+    size: 237268131B
+  kernel:
+    id: oci://docker.io/weaveworks/ignite-kernel@sha256:9f961af5a9735021682eed102f5b8b14c8ebc8273a5cc192779c0686f1241653
+    size: 52178500B
   running: true
