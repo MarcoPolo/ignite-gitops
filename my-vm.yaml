@@ -5,6 +5,7 @@ metadata:
   name: dark-glade
   uid: f53b6d04e98ecf56
 spec:
+  ssh: true
   cpus: 1
   diskSize: 4GB
   image:
